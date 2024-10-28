@@ -127,4 +127,13 @@ docker run -d \
 - If you encounter issues, check Docker logs and error messages for troubleshooting.
 
 ```
+Issues Faced:
+*  MYSQL_USER=“root”, MYSQL_USER and MYSQL_PASSWORD are for configuring a regular user and cannot be used for the root user
+> Remove MYSQL_USER=“root” and use one of the following to control the root user password:
+> - MYSQL_ROOT_PASSWORD
+> - MYSQL_ALLOW_EMPTY_PASSWORD
+> - MYSQL_RANDOM_ROOT_PASSWORD
 
+Resolution:
+
+Remove MYSQL_USER=root as root user is created by default and when you use MYSQL_USER=root it tries to create a new normal user with name root which cause conflict.
