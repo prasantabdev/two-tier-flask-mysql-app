@@ -22,7 +22,7 @@ services:
 
   flaskapp:
     build: 
-      context: ./
+      context: .
     container_name: flask-app
     ports:
       - 5000:5000
